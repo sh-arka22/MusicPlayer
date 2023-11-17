@@ -1,108 +1,162 @@
-# Object_Modeling
+ # Music Player
 
-![c495b2a5-b525-4a6b-bd2c-8fa4008cdcf1](https://user-images.githubusercontent.com/55679683/202839791-8e91ff54-2e45-4a3b-9a41-0636a4fab25b.png)
+### This is a Low-Level Design Problem
+
+Everyone listens to songs on their favorite apps (Savvn, Wynk), but have we ever thought about how we can make our own music player? So, I have designed a music player with the features given below.
+
+#### Assumptions
+1) On reaching the end, the Next command will switch to the first song in the current playlist.
+2) On reaching the start, the Back command will switch to the last song in the current playlist.
+3) You can assume that songId and playlistId are always valid.
+4) A song will contain the artist, album, and genre.
+5) In the Add_Song and Create_playlist command, you have to create an ID by yourself.
+### Features
+
+- A user can create a playlist from an available pool of songs.
+- A user can add songs to the playlist.
+- User can play the playlist and be able to switch songs (forward or backward).
+- List all the songs in the pool.
+
+### Further Improvements
+
+- We can use spring boot to make api calls in real time
+- An UI can be added with this backend to work like a Music Player
+- Insted of storing in memeory we can use Databases to sotore the musics
 
 
-## Overview
 
-There is a lot of research and development effort that goes into building an enterprise software, which serves the customers in achieving their business goals. There are certain techniques to be followed to build the software iteratively and adapt to the changing requirements of the end users. This is where good low level design architecture helps. 
+### Outcomes
 
-During the course of this project,
+- Code should be Demo-able and functionally complete.
+- Code fails gracefully with a proper error message for corner/invalid cases, use exceptions for handling these cases.
+- Code is be modular, try thinking in terms of Object-Oriented Design
+- Input is taken from the command line or in the main function.
 
-1. Understood the implementation of the Movie booking problem implementation provided by Crio.Do.
-2. Built a Hackerrank like contest application by applying their Core Java + design skills
-3. Designed & implemented the classes required for a contest framework.
-4. Implemented the business logic of running a simulated contest.
-5. Built a JukeBox application based on a problem statement, from scratch.
 
-#### Images:
+### Input given given from the CSV file
+- ADD_SONG Song_1 Artist_1 Album_1 Genre_1
 
-##### Clean Architecture:
+- ADD_SONG Song_2 Artist_2 Album_2 Genre_2
 
-![Clean Architecture](https://user-images.githubusercontent.com/55679683/202706933-6cbe3164-c8f4-46e7-bc9c-be868c44c0ff.png)
+- ADD_SONG Song_3 Artist_3 Album_3 Genre_3
 
-## Introduction to Low Level Design
+- ADD_SONG Song_4 Artist_4 Album_4 Genre_1
 
-### Scope of Work:
+- ADD_SONG Song_5 Artist_5 Album_5 Genre_2
 
-1. Get introduced to the components of Clean Architecture.
-2. Understand entities and identify them with the help of real-world examples.
-3. Gather requirements and translate them into use cases.
-4. Understand the need for a datastore.
+- ADD_SONG Song_6 Artist_6 Album_6 Genre_3
 
-##### Skills used: Clean Architecture.
+- ADD_SONG Song_7 Artist_7 Album_7 Genre_1
 
-##### Components of Clean Architecture:
+- ADD_SONG Song_8 Artist_8 Album_8 Genre_2
 
-![Components of Clean Architecture](https://user-images.githubusercontent.com/55679683/202707759-f6268ba4-e9ef-4360-aed7-e50f2bf42167.png)
+- ADD_SONG Song_9 Artist_9 Album_9 Genre_3
 
-## Identify relationships between entities
+- ADD_SONG Song_10 Artist_10 Album_10 Genre_1
 
-### Scope of Work:
+- LIST_SONGS
 
-1. Explore different types of class relationships and their purpose.
-2. Discover relationships for different scenarios and draw an object diagram.
-3. Understand the provided Object Relationship Diagram of Movie Booking Problem statement.
-4. Understand the CodinGame problem statement. Draw Use Case and Object Diagram for the given scenarios.
+- CREATE_PLAYLIST PLAYLIST_1 2 4 6 8
 
-#### Skills used: Object Oriented Design.
+- CREATE_PLAYLIST PLAYLIST_2 1 3 5 7 9
 
-#### Images: 
+- LOAD_PLAYLIST PLAYLIST_1
 
-##### Use Case Diagram for Coding Game:
+- PLAY_SONG
 
-![Use Case Diagram for Coding Game](https://user-images.githubusercontent.com/55679683/202709516-cc97d4f7-1eac-4f47-b504-e35f34eef747.png)
+- NEXT_SONG
 
-##### Object Diagram for CodinGame
+- NEXT_SONG
 
-![Object Diagram for CodinGame](https://user-images.githubusercontent.com/55679683/202709674-8c11bccc-3450-4a0b-b671-e0dc36b559b3.png)
+- NEXT_SONG
 
-## Implement Entities
+- PREVIOUS_SONG
 
-### Scope of Work:
+- PREVIOUS_SONG
 
-#### For CodinGame Problem Statement
+- PREVIOUS_SONG
 
-1. Implement entities with the identified attributes and their behaviour.
-2. Implement the relationship between the entities
-3. Write good quality tests for entitles, which cover all the relevant behaviour.
+- PLAY_SONG
 
-#### Skills used: Java, Unit Testing, Test Driven Development.
+- STOP_SONG
 
-## Implement Services and Repositories
+- DELETE_PLAYLIST PLAYLIST_1
 
-### Scope of Work:
+- ADD_SONG_TO_PLAYLIST PLAYLIST_2 8
 
-1. Implemented services & repositories layer of CodinGame adhering to the SOLID principles.
-2. Followed Test Driven Development to ensure correctness and better code coverage.
+- DELETE_SONG_FROM_PLAYLIST PLAYLIST_2 9
 
-#### Skills used: Java, Unit Testing, Test Driven Development, Design Patterns, SOLID Principles.
+- LOAD_PLAYLIST PLAYLIST_2
 
-## Implement Commands and finish up the Project
+- PLAY_SONG
 
-### Scope of Work:
+- NEXT_SONG
 
-1. Implement all the required commands in the controller layer for the CodinGame problem statement using Test Driven Development.
+- NEXT_SONG
 
-#### Skills used: Java,Unit Testing, Test Driven Development, Design Patterns, SOLID Principles.
+- PREVIOUS_SONG
 
-## Implement JukeBox from Scratch
 
-### Scope of Work:
+## Output
 
-1. Clearly understand the Problem Statement Requirements.
-2. Identify the Primary Use Cases / Behaviour of the system.
-3. Identify the Key Objects / Entities from the listed use cases.
-4. Identify the behaviours / supported operations for Identified objects.
-5. Identify Interactions between the entities (Class Relationships).
-6. Implement all the required layers embracing the clean architecture style.
-7. Implement all the required layers step by step in a Test-driven development style to ensure correctness and better code coverage.
+Song [id=1]
 
-#### Skills used: Java, Object Oriented Design, Design Patterns, Test Driven Development, Unit Testing.
+Song [id=2]
 
-#### Images:
+Song [id=3]
 
-##### Use Case Diagram for Coding Game:
+Song [id=4]
 
-![JukeBox Conceptual Overview](https://user-images.githubusercontent.com/55679683/202711048-5361a8b7-005b-4606-90f6-6ef6dff55599.png)
+Song [id=5]
 
+Song [id=6]
+
+Song [id=7]
+
+Song [id=8]
+
+Song [id=9]
+
+Song [id=10]
+
+[Song [id=1], Song [id=2], Song [id=3], Song [id=4], Song [id=5], Song [id=6], Song [id=7], Song [id=8], Song [id=9], Song [id=10]]
+
+Playlist [id=1]
+
+Playlist [id=2]
+
+Playlist PLAYLIST_1 is loaded!
+
+Song [id=2] is playing!
+
+Song [id=4] is playing!
+
+Song [id=6] is playing!
+
+Song [id=8] is playing!
+
+Song [id=6] is playing!
+
+Song [id=4] is playing!
+
+Song [id=2] is playing!
+
+Song [id=2] is paused!
+
+Song [id=2] is stopped!
+
+Playlist PLAYLIST_1 is deleted!
+
+Playlist PLAYLIST_2 is revised with [Song [id=1], Song [id=3], Song [id=5], Song [id=7], Song [id=9], Song [id=8]]
+
+Playlist PLAYLIST_2 is revised with [Song [id=1], Song [id=3], Song [id=5], Song [id=7], Song [id=8]]
+
+Playlist PLAYLIST_2 is loaded!
+
+Song [id=1] is playing!
+
+Song [id=3] is playing!
+
+Song [id=5] is playing!
+
+Song [id=3] is playing!
